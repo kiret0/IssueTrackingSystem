@@ -1,0 +1,56 @@
+<div class="modal fade" id="add-issue-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="margin-top: 0">Add new Issue</h2>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="issueTitle">Title</label>
+                        <input type="text" class="form-control" id="issueTitle" placeholder="Issue Title" ng-model="issueData.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="issueAssignee">Assignee</label>
+                        <select class="form-control" id="issueAssignee" ng-init="issueData.assignee = authService.getCurrentUser().username" ng-model="issueData.assignee">
+                            <option ng-repeat="user in users">{{user.username}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueProject">Project</label>
+                        <select class="form-control" id="issueProject">
+                            <option ng-repeat="project in projects" ng-model="issueData.projectName">{{project.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueKey">Issue Key</label>
+                        <input type="text" class="form-control" id="issueKey" placeholder="Issue Key" ng-model="issueData.key">
+                    </div>
+                    <div class="form-group">
+                        <label for="issuePriority">Priority</label>
+                        <select class="form-control" id="issuePriority" id-init="issueData.priority = 'Cosmetic'" ng-model="issueData.priority">
+                            <option ng-repeat="project in projects" ng-model="issueData.projectName">{{project.priorities}}</option>
+                        </select>
+                    </div>
+                        <div class="form-group">
+                        <label for="issueDate">Due Date</label>
+                        <input type="date" class="form-control" id="issueDate" placeholder="dd/mm/yyyy" ng-model="issueData.dueDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="issueLabels">Labels (comma separated)</label>
+                        <input type="text" class="form-control" id="issueLabels" placeholder="Labels" value="Soft" ng-model="issueData.labels">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueDescription">Description</label>
+                        <textarea class="form-control" placeholder="Description" id="issueDescription" ng-model="issueData.description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" ng-click="addNewIssue(issueData)">Add Issue</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

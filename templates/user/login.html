@@ -1,0 +1,14 @@
+<div class="jumbotron pull-left" style="width: 48%">
+    <h2>Login</h2>
+    <p>
+        <label for="usernameLogin">Username:</label>
+        <input class="form-control" type="text" id="usernameLogin" ng-model="userData.username" required />
+    </p>
+    <p>
+        <label for="passwordLogin">Password:</label>
+        <input class="form-control" type="password" id="passwordLogin" ng-model="userData.password" required />
+    </p>
+    <p>
+        <a ng-click="login(userData)" class="btn btn-success">Login</a>
+    <p>
+</div>

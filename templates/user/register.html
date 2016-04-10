@@ -1,0 +1,29 @@
+<div class="jumbotron pull-right" style="width: 48%">
+    <h2>Register</h2>
+    <p>
+        <label for="usernameRegister">Username:</label>
+        <input class="form-control" id="usernameRegister" ng-model="userData.username" required />
+    </p>
+    <p>
+        <label for="passwordRegister">Password:</label>
+        <input class="form-control" type="password" id="passwordRegister" ng-model="userData.password" required />
+    </p>
+    <p>
+        <label for="confirmPasswordRegister">Confirm Password:</label>
+        <input class="form-control" type="password" id="confirmPasswordRegister" ng-model="userData.confirmPassword" required />
+    </p>
+    <p>
+        <label for="name">Full Name:</label>
+        <input class="form-control" type="text" id="name" ng-model="userData.fullName" required />
+    </p>
+    <p>
+        <label for="isAdmin">Is Admin:</label>
+        <select id="isAdmin" class="form-control" ng-init="userData.admin = 'False'" ng-model="userData.admin">
+            <option value="False">False</option>
+            <option value="True">True</option>
+        </select>
+    </p>
+    <p>
+        <a ng-click="register(userData)" class="btn btn-success">Register</a>
+    <p>
+</div>
